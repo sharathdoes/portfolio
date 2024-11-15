@@ -1,9 +1,9 @@
 // src/App.jsx
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
+import Home from './pages/home.jsx';
+import Projects from './pages/projects.jsx';
+import About from './pages/about.jsx';
 
 
 function App() {
