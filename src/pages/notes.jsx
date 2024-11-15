@@ -37,9 +37,9 @@ function Notes() {
 
   return (
     <div className="flex justify-center    ">
-      <div className="w-full max-w-md  pb-8 rounded-lg shadow-lg">
+      <div className="w-full max-w-md  pb-3 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-white mb-6">Send a Message</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="">
           <div>
             <label htmlFor="name" className="block text-sm text-gray-300">Name:</label>
             <input
@@ -74,7 +74,7 @@ function Notes() {
           </div>
           <button
             type="submit"
-            className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            className="w-full p-3 mt-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
             Send Message
           </button>

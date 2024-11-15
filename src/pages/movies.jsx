@@ -7,7 +7,7 @@ import { ScrollArea } from '../components/ui/scroll-area'; // Assuming you're us
 
 function Movies() {
   return (
-    <div className="movies-container p-4">
+    <div className="movies-container ">
       <ScrollArea className="h-96 overflow-y-auto">
         <div className="grid grid-cols-2 gap-4">
           {/* Image 1 */}
