@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Folder, File } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, ChevronRight, Folder, File, Menu, X } from 'lucide-react';
 import Highlights from './highlights';
 import Lists from './links';
 import Amplify from './amplify';
@@ -30,8 +30,8 @@ const fileStructure = [
           type: 'folder',
           children: [
             { name: 'gen ai', type: 'folder', children: [{ name: 'rag.jsx', type: 'file', component: langchain }] },
-            { name: 'anomaly.jsx', type: 'file', component: anomaly },
             { name: 'amplify.jsx', type: 'file', component: Amplify },
+            { name: 'anomaly.jsx', type: 'file', component: anomaly },
             { name: 'craft&stitch.jsx', type: 'file', component: cands },
           ],
         },
@@ -50,11 +50,9 @@ const fileStructure = [
           ],
         },
         { name: 'contact.me', type: 'file', component: Notes },
-        
       ],
     },
-  ];
-  
+];
 
 const FileTreeItem = ({ item, depth, onSelectFile, expandedFolders, toggleFolder, selectedFile }) => {
   const isFolder = item.type === 'folder';
@@ -79,7 +77,7 @@ const FileTreeItem = ({ item, depth, onSelectFile, expandedFolders, toggleFolder
         {isFolder ? (
           <Folder className="inline-block mr-2 h-4 w-4 text-yellow-400" />
         ) : (
-          <File className="inline-block mr-2 h-4 w-4 " />
+          <File className="inline-block mr-2 h-4 w-4" />
         )}
         <span className={`${isFolder ? 'font-medium' : ''} text-gray-200`}>{item.name}</span>
       </button>
@@ -104,7 +102,20 @@ const FileTreeItem = ({ item, depth, onSelectFile, expandedFolders, toggleFolder
 
 export default function about() {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [expandedFolders, setExpandedFolders] = useState({});
+  const [expandedFolders, setExpandedFolders] = useState({ portfolio: true });
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsSidebarOpen(window.innerWidth >= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleFolder = (folderName) => {
     setExpandedFolders((prev) => ({
@@ -113,20 +124,44 @@ export default function about() {
     }));
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#252422] text-gray-200" style={{ fontFamily: 'Arial, sans-serif' }}>
-      <div className="flex w-full max-w-4xl h-[60vh] bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
+      <div className="flex w-full max-w-4xl h-[60vh] md:h-[60vh] bg-gray-800 rounded-2xl overflow-hidden shadow-lg relative">
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={toggleSidebar}
+          className="md:hidden absolute top-4 left-4 z-50 p-2 rounded-lg bg-gray-700 hover:bg-gray-600"
+        >
+          {isSidebarOpen ? (
+            <X className="h-6 w-6 text-gray-200" />
+          ) : (
+            <Menu className="h-6 w-6 text-gray-200" />
+          )}
+        </button>
+
         {/* Sidebar */}
-        <aside className="w-[35%] border-r border-gray-700" style={{ backgroundColor: '#1e1e1e' }}>
+        <aside 
+          className={`${
+            isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          } transition-transform duration-300 absolute md:relative z-40 w-full md:w-[35%] h-full border-r border-gray-700 md:translate-x-0`}
+          style={{ backgroundColor: '#1e1e1e' }}
+        >
           <ScrollArea className="h-full">
-            <div className="p-4">
-              <h2 className="text-xl font-bold mb-4 text-gray-300">Explore files</h2>
+            <div className="p-4 pt-16 md:pt-4">
+              <h2 className="text-xl ml-2 font-bold mb-4 text-gray-300">Explore files</h2>
               {fileStructure.map((item) => (
                 <FileTreeItem
                   key={item.name}
                   item={item}
                   depth={0}
-                  onSelectFile={setSelectedFile}
+                  onSelectFile={(file) => {
+                    setSelectedFile(file);
+                    if (isMobile) setIsSidebarOpen(false);
+                  }}
                   expandedFolders={expandedFolders}
                   toggleFolder={toggleFolder}
                   selectedFile={selectedFile}
@@ -137,15 +172,19 @@ export default function about() {
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 p-6 overflow-auto" style={{ backgroundColor: '#2d2d2d' }}>
+        <main 
+          className={`flex-1 p-6 overflow-auto ${
+            isMobile && isSidebarOpen ? 'opacity-50' : 'opacity-100'
+          }`}
+          style={{ backgroundColor: '#2d2d2d' }}
+        >
           {selectedFile && selectedFile.component ? (
             <div className="p-4 bg-[#1e1e1e] rounded-lg text-gray-300">
-              {/* Render the component dynamically */}
               <selectedFile.component />
             </div>
           ) : (
-            <div className="flex h-full items-center justify-center text-gray-500">
-              Select a file to view its content
+            <div className="flex h-full items-center justify-center text-gray-200">
+              Hi there! I'm sharath...
             </div>
           )}
         </main>

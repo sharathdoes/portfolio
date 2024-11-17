@@ -11,6 +11,8 @@ function Details() {
        bring new perspectives to life.
       </p>
       <p className='mt-4'>
+      CGPA : 8.70  </p>
+      <p className='mt-4'>
             It's funny how 95% of the ocean remains unexplored, yet we spend so much time 
             perfecting websites and tech. I love the sea, its endless mysteries, and how it reminds me there’s always more to learn.
       </p>
