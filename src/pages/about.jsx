@@ -29,7 +29,7 @@ const fileStructure = [
           name: 'projects',
           type: 'folder',
           children: [
-            { name: 'gen ai', type: 'folder', children: [{ name: 'langchain.jsx', type: 'file', component: langchain }] },
+            { name: 'gen ai', type: 'folder', children: [{ name: 'rag.jsx', type: 'file', component: langchain }] },
             { name: 'anomaly.jsx', type: 'file', component: anomaly },
             { name: 'amplify.jsx', type: 'file', component: Amplify },
             { name: 'craft&stitch.jsx', type: 'file', component: cands },
@@ -43,13 +43,13 @@ const fileStructure = [
           ],
         },
         {
-          name: 'Fav movies',
+          name: 'fav movies',
           type: 'folder',
           children: [
-            { name: 'fav4.jsx', type: 'file', component: movies },
+            { name: 'fav4.lb', type: 'file', component: movies },
           ],
         },
-        { name: 'message.txt', type: 'file', component: Notes },
+        { name: 'contact.me', type: 'file', component: Notes },
         
       ],
     },
