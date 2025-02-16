@@ -1,14 +1,17 @@
 import React from 'react';
 import { Github } from 'lucide-react';
+import image from './image1.png'; // Import the image
 
 function Langchain() {
   return (
     <div>
-      <h2>Langchain Projects</h2>
-      <p className='mb-2 mt-2'>
-      I developed a First Aid bot using Langchain, seamlessly integrating it with a Retrieval-Augmented Generation (RAG) application. The app leverages a FAISS database and BERT transformer to deliver fast, precise, and reliable responses, ensuring users receive accurate first aid information in real time. </p>
+      <h2 className='mb-5 font-bold'>Luma AI </h2>
+      <a href={image} target="_blank" rel="noopener noreferrer">
+        <img className="rounded-lg mb-2" src={image} alt="Luma AI Project Image" />
+      </a> {/* Display the image with a link to open it */}
+      <p className='mb-2 mt-2'>Luma AI finds you Film content based on your constraints/specifications - search with descriptions, scenes, or any detail you remember, no exact titles needed.</p>
       <p>
-        Check out the projects on my  <a href="https://github.com/sharathdoes/langchain-all-experiments" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+        Check out the projects on my  <a href="https://github.com/sharathdoes/Luma-Ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
           <Github className="w-4 h-4 mr-1" />
           GitHub
         </a>.
