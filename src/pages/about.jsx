@@ -11,6 +11,7 @@ import links from "./links";
 import movies from "./movies";
 import Notes from "./notes";
 import { ScrollArea } from "../components/ui/scroll-area";
+import Os from "./os";
 import TypingAnimation from "../components/ui/typing-animation";
 
 const fileStructure = [
@@ -31,13 +32,23 @@ const fileStructure = [
         type: "folder",
         children: [
           {
-            name: "gen ai",
+            name: "Generative ai",
             type: "folder",
-            children: [{ name: "rag.jsx", type: "file", component: langchain }],
+            children: [{ name: "luma.jsx", type: "file", component: langchain }, { name: "os.jsx", type: "file", component: Os }],
           },
-          { name: "amplify.jsx", type: "file", component: Amplify },
-          { name: "anomaly.jsx", type: "file", component: anomaly },
-          { name: "craft&stitch.jsx", type: "file", component: cands },
+          {
+            name: "Fullstack Dev",
+            type: "folder",
+            children: [
+              { name: "amplify.jsx", type: "file", component: Amplify },
+              { name: "design.jsx", type: "file", component: cands },
+            ],
+          },
+          {
+            name: "Machine Learning",
+            type: "folder",
+            children: [{ name: "anomaly.jsx", type: "file", component: anomaly }],
+          },
         ],
       },
       {
@@ -189,22 +200,19 @@ export default function about() {
         </aside>
 
         {/* Content Area */}
-        <main
-          className={`flex-1 p-6 overflow-auto ${
+        <ScrollArea className={`flex-1 p-6 overflow-auto ${
             isMobile && isSidebarOpen ? "opacity-50" : "opacity-100"
-          }`}
-          style={{ backgroundColor: "#2d2d2d" }}
-        >
+          }`} style={{ backgroundColor: "#2d2d2d", scrollbarWidth: "thin", scrollbarColor: "white" }}>
           {selectedFile && selectedFile.component ? (
             <div className="p-4 bg-[#1e1e1e] rounded-lg text-gray-300">
               <selectedFile.component />
             </div>
           ) : (
-            <div className="flex h-full items-center justify-center text-gray-200 ">
-              <TypingAnimation className="text-gray-300 text-lg mb-6" text="Hi there! I'm sharath..." />
+            <div className="flex h-full items-start justify-center text-gray-200 ">
+              <TypingAnimation className="text-gray-300 mt-44 text-lg mb-6" text="Hi there! I'm sharath..." />
             </div>
           )}
-        </main>
+        </ScrollArea>
       </div>
     </div>
   );
