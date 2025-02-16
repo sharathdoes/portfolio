@@ -2,14 +2,16 @@ import React from 'react';
 
 function Highlights() {
   return (
-    <div>
-      <h2 className="mb-2">My Highlights</h2>
-      <ul>
-        <li className="mb-2">Skilled in React.js, Node.js, Express, MongoDB. Recently I started learning Langchain, NLP, RAG and Vector db such as FAISS, chroma. </li>
-        <li className="mb-2">First place in Yukthi Hackathon for building obscenity Filter Extension.</li>
-        <li className="mb-2"> Winner of the Skykhar Webathon for building a web app which helps farmers.</li>
-        <li className="mb-2">I code in C++, Java - LeetCode rating: 1574</li>
-        <li className="mb-2">5-star ranking on HackerRank</li>
+    <div className="highlights-container mb-2">
+      <h2 className="highlights-title mb-2 font-bold">My Highlights</h2>
+      <ul className="highlights-list mb-2">
+        <li className="highlights-item mb-2">Proficient in React.js, Node.js, Express, MongoDB, and exploring Langchain, NLP, RAG, and Vector databases like FAISS and chroma.</li>
+        <hr className="mb-2" />
+        <li className="highlights-item mb-2">Awarded first place in the Yukthi Hackathon for developing an obscenity Filter Extension.</li>
+        <hr className="mb-2" />
+        <li className="highlights-item mb-2">Recognized as the winner of the Skykhar Webathon for creating a web application that supports farmers.</li>
+        <hr className="mb-2" />
+        <li className="highlights-item mb-2">Experienced in coding languages such as C++ and Java, with a LeetCode rating of 1650.</li>
       </ul>
     </div>
   );
