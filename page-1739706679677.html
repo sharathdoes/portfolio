@@ -1,0 +1,1223 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+      <title>{{project.seoTitle}}</title>
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+       <link href="{{fontLink}}" rel="stylesheet">
+       <link href="{{secondaryFontLink}}" rel="stylesheet">
+      
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '{{settings.colors.primary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '{{settings.colors.secondary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '{{settings.colors.accent}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['{{settings.fonts.primary}}', 'Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['{{settings.fonts.secondary}}', 'system-ui', 'sans-serif'],
+                body: ['{{settings.fonts.secondary}}', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+      
+      <link rel="icon" type="image/x-icon" href="{{settings.favicon}}">
+      
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: {{settings.fonts.primary}}, system-ui, sans-serif;
+        }
+        body {
+          font-family: {{settings.fonts.secondary}}, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="0b7d6109-07d8-4c8d-9b52-48a3a50f2174" data-section-id="0b7d6109-07d8-4c8d-9b52-48a3a50f2174">
+
+
+<div id="root">
+  <section id="header" class="min-h-[70vh] bg-neutral-900">
+    <nav class="fixed w-full z-50 bg-neutral-900/95 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <span class="text-2xl font-bold text-yellow-400">Credex</span>
+            </div>
+          </div>
+          
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+                <a href="/" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                <a href="/features" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                <a href="/coupons" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Explore Coupons</a>
+                <a href="/card-benefits" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Card Benefits</a>
+                <a href="/how-it-works" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How It Works</a>
+                <a href="/safety" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Safety</a>
+                <a href="/faq" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">FAQ</a>
+                <a href="/contact" class="text-gray-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+            </div>
+          </div>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden bg-neutral-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="/features" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">Features</a>
+            <a href="/coupons" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">Explore Coupons</a>
+            <a href="/card-benefits" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">Card Benefits</a>
+            <a href="/how-it-works" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">How It Works</a>
+            <a href="/safety" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">Safety</a>
+            <a href="/faq" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">FAQ</a>
+            <a href="/contact" class="text-gray-300 hover:text-yellow-400 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
+      <div class="text-center animate__animated animate__fadeIn">
+        <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+          <span class="block">Share & Save with</span>
+          <span class="block text-yellow-400">Unused Coupons</span>
+        </h1>
+        <p class="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+          Upload your unused coupons or claim others' - First come, first serve. Share credit card benefits and save together.
+        </p>
+        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+          <div class="rounded-md shadow">
+            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-500 md:py-4 md:text-lg md:px-10">
+              Get Started
+            </a>
+          </div>
+          <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-400 bg-neutral-800 hover:bg-neutral-700 md:py-4 md:text-lg md:px-10">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+</div>
+</element><element id="d08e06de-c591-47f5-bbb6-fdd7089854f3" data-section-id="d08e06de-c591-47f5-bbb6-fdd7089854f3">
+
+
+<div id="root">
+  <section id="hero" class="min-h-screen bg-neutral-900 pt-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-center animate__animated animate__fadeInLeft">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Share & Save with <span class="text-yellow-400">Unused Coupons</span>
+        </h1>
+        <p class="text-gray-300 text-lg md:text-xl mb-8">
+          Don't let your coupons go to waste! Share them with others or find the perfect deal for yourself. Connect with card holders and maximize your savings potential.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button class="px-8 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+            Upload Coupon
+          </button>
+          <button class="px-8 py-3 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-semibold rounded-lg transition-all duration-300">
+            Find Deals
+          </button>
+        </div>
+        <div class="mt-8 flex items-center space-x-4">
+          <div class="flex -space-x-2">
+            <div class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center text-white">👤</div>
+            <div class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center text-white">👤</div>
+            <div class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center text-white">👤</div>
+          </div>
+          <p class="text-gray-400">Join <span class="text-yellow-400">1000+</span> users already saving</p>
+        </div>
+      </div>
+
+      <div class="relative animate__animated animate__fadeInRight">
+        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-purple-500/20 rounded-2xl filter blur-3xl"></div>
+        <div class="relative bg-neutral-800 p-6 rounded-2xl border border-neutral-700">
+          <div class="grid grid-cols-1 gap-4">
+            <div class="bg-neutral-700 p-4 rounded-lg">
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400">Shopping Coupon</span>
+                <span class="text-white">50% OFF</span>
+              </div>
+              <div class="mt-2 text-gray-300 text-sm">Valid until: Dec 31, 2023</div>
+            </div>
+            <div class="bg-neutral-700 p-4 rounded-lg">
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400">Movie Ticket</span>
+                <span class="text-white">Buy 1 Get 1</span>
+              </div>
+              <div class="mt-2 text-gray-300 text-sm">Valid until: Nov 30, 2023</div>
+            </div>
+            <div class="bg-neutral-700 p-4 rounded-lg">
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400">Restaurant</span>
+                <span class="text-white">20% OFF</span>
+              </div>
+              <div class="mt-2 text-gray-300 text-sm">Valid until: Jan 15, 2024</div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <div class="relative">
+              <input type="text" placeholder="Search for coupons..." class="w-full bg-neutral-900 border border-neutral-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-yellow-400">
+              <button class="absolute right-2 top-2 text-yellow-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="fc5e6727-caae-420c-a93d-26e8d1fa9dd0" data-section-id="fc5e6727-caae-420c-a93d-26e8d1fa9dd0">
+
+
+<div id="root">
+  <section id="features" class="py-20 bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Key Features</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Discover how Credex helps you save money and share benefits with others</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp">
+          <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Share Unused Coupons</h3>
+          <p class="text-gray-400">Upload your unused coupons and let others benefit from deals you won't use.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+          <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Card Benefits Sharing</h3>
+          <p class="text-gray-400">Connect with card holders and share exclusive credit card offers and benefits.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+          <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Secure Chat System</h3>
+          <p class="text-gray-400">Communicate safely with other users to discuss offers and arrangements.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+          <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Smart Filtering</h3>
+          <p class="text-gray-400">Find exactly what you need with our advanced filtering system for coupons and cards.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+          <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Secure Transactions</h3>
+          <p class="text-gray-400">Built-in safety measures and admin support for worry-free dealings.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 1s">
+          <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Complaint Resolution</h3>
+          <p class="text-gray-400">Quick and effective resolution system for any issues that may arise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="56a8ddb5-00ad-41d8-8c2f-4ce8fef84838" data-section-id="56a8ddb5-00ad-41d8-8c2f-4ce8fef84838">
+
+
+                
+<div id="root">
+  <section id="couponExplorer" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Sidebar and Main Content Layout -->
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar -->
+        <div class="lg:w-1/4">
+          <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+            <h3 class="text-xl font-bold text-white mb-6">Filters</h3>
+            
+            <!-- Categories -->
+            <div class="mb-8">
+              <h4 class="text-gray-400 mb-4">Categories</h4>
+              <div class="flex flex-col gap-3">
+                <button class="px-4 py-2 bg-yellow-400 text-black rounded-lg font-medium hover:bg-yellow-500 transition-colors text-left">
+                  All Coupons
+                </button>
+                <button class="px-4 py-2 bg-neutral-700 text-gray-300 rounded-lg font-medium hover:bg-neutral-600 transition-colors text-left">
+                  Shopping
+                </button>
+                <button class="px-4 py-2 bg-neutral-700 text-gray-300 rounded-lg font-medium hover:bg-neutral-600 transition-colors text-left">
+                  Movies
+                </button>
+                <button class="px-4 py-2 bg-neutral-700 text-gray-300 rounded-lg font-medium hover:bg-neutral-600 transition-colors text-left">
+                  Restaurants
+                </button>
+                <button class="px-4 py-2 bg-neutral-700 text-gray-300 rounded-lg font-medium hover:bg-neutral-600 transition-colors text-left">
+                  Travel
+                </button>
+              </div>
+            </div>
+
+            <!-- Sort Options -->
+            <div class="mb-8">
+              <h4 class="text-gray-400 mb-4">Sort By</h4>
+              <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-yellow-400">
+                <option value="">Select option</option>
+                <option value="expiry">Expiry Date</option>
+                <option value="value">Value</option>
+                <option value="recent">Recently Added</option>
+              </select>
+            </div>
+
+            <!-- Search -->
+            <div>
+              <h4 class="text-gray-400 mb-4">Search</h4>
+              <input type="text" placeholder="Search coupons..." class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-yellow-400">
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:w-3/4">
+          <div class="text-center mb-12 animate__animated animate__fadeIn">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Explore Available Coupons</h2>
+            <p class="text-gray-400">Browse through available coupons or filter by category</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Coupon Card 1 -->
+            <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700 hover:border-yellow-400 transition-all duration-300">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <span class="px-3 py-1 bg-yellow-400 text-black text-sm rounded-full">Shopping</span>
+                  <h3 class="text-white text-xl font-semibold mt-2">50% Off at Amazon</h3>
+                </div>
+                <button class="text-yellow-400 hover:text-yellow-500">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="text-gray-400 mb-4">Valid on all electronics purchases above $500</p>
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-gray-500">Expires: Dec 31, 2023</span>
+                <button class="px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-colors">
+                  Claim Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Coupon Card 2 -->
+            <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700 hover:border-yellow-400 transition-all duration-300">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <span class="px-3 py-1 bg-yellow-400 text-black text-sm rounded-full">Movies</span>
+                  <h3 class="text-white text-xl font-semibold mt-2">Buy 1 Get 1 Free</h3>
+                </div>
+                <button class="text-yellow-400 hover:text-yellow-500">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="text-gray-400 mb-4">Valid on all IMAX movies this weekend</p>
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-gray-500">Expires: Nov 30, 2023</span>
+                <button class="px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-colors">
+                  Claim Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <button class="px-8 py-3 bg-neutral-800 text-yellow-400 rounded-lg hover:bg-neutral-700 transition-colors">
+              Load More Coupons
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+              </element><element id="d8ed5999-09e4-44ff-b141-558471873e8d" data-section-id="d8ed5999-09e4-44ff-b141-558471873e8d">
+
+<div id="root">
+  <section id="cardBenefits" class="py-20 bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Credit Card Benefits Sharing</h2>
+        <p class="text-gray-400">Connect with card holders and share exclusive benefits</p>
+      </div>
+
+      <div class="mb-8 animate__animated animate__fadeInUp">
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+          <div class="flex-1">
+            <input type="text" placeholder="Search for card benefits..." class="w-full px-4 py-2 bg-neutral-900 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400">
+          </div>
+          <select class="px-4 py-2 bg-neutral-900 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400">
+            <option value="">Card Type</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card Benefit 1 -->
+          <div class="bg-neutral-900 rounded-xl p-6 border border-neutral-700 hover:border-yellow-400 transition-all duration-300">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <span class="px-3 py-1 bg-yellow-400 text-black text-sm rounded-full">Premium Card</span>
+                <h3 class="text-white text-xl font-semibold mt-2">Airport Lounge Access</h3>
+              </div>
+              <div class="text-yellow-400">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">Share airport lounge access benefit with other travelers</p>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 rounded-full bg-neutral-700 flex items-center justify-center text-white">👤</div>
+              <span class="text-gray-300">John D. is offering</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">4 uses available</span>
+              <button class="px-4 py-2 bg-neutral-800 text-yellow-400 rounded-lg hover:bg-neutral-700 transition-colors">
+                Request Access
+              </button>
+            </div>
+          </div>
+
+          <!-- Card Benefit 2 -->
+          <div class="bg-neutral-900 rounded-xl p-6 border border-neutral-700 hover:border-yellow-400 transition-all duration-300">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <span class="px-3 py-1 bg-yellow-400 text-black text-sm rounded-full">Rewards Card</span>
+                <h3 class="text-white text-xl font-semibold mt-2">Cashback Offer</h3>
+              </div>
+              <div class="text-yellow-400">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">10% cashback on all online shopping purchases</p>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 rounded-full bg-neutral-700 flex items-center justify-center text-white">👤</div>
+              <span class="text-gray-300">Sarah M. is offering</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">2 uses available</span>
+              <button class="px-4 py-2 bg-neutral-800 text-yellow-400 rounded-lg hover:bg-neutral-700 transition-colors">
+                Request Access
+              </button>
+            </div>
+          </div>
+
+          <!-- Card Benefit 3 -->
+          <div class="bg-neutral-900 rounded-xl p-6 border border-neutral-700 hover:border-yellow-400 transition-all duration-300">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <span class="px-3 py-1 bg-yellow-400 text-black text-sm rounded-full">Travel Card</span>
+                <h3 class="text-white text-xl font-semibold mt-2">Hotel Discount</h3>
+              </div>
+              <div class="text-yellow-400">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">30% off on luxury hotel bookings worldwide</p>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 rounded-full bg-neutral-700 flex items-center justify-center text-white">👤</div>
+              <span class="text-gray-300">Mike R. is offering</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">1 use available</span>
+              <button class="px-4 py-2 bg-neutral-800 text-yellow-400 rounded-lg hover:bg-neutral-700 transition-colors">
+                Request Access
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <button class="px-8 py-3 bg-neutral-900 text-yellow-400 rounded-lg hover:bg-neutral-700 transition-colors">
+            View More Benefits
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></element><element id="6bb64085-112e-4b72-9ed3-b13f98434ec2" data-section-id="6bb64085-112e-4b72-9ed3-b13f98434ec2">
+
+<div id="root">
+  <section id="howItWorks" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">How Credex Works</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Simple steps to start sharing and saving with our community</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="relative animate__animated animate__fadeInUp">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-xl">
+            1
+          </div>
+          <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700 h-full">
+            <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Upload or Search</h3>
+            <p class="text-gray-400">Upload your unused coupons or search for available card benefits that match your needs</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-xl">
+            2
+          </div>
+          <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700 h-full">
+            <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Connect & Chat</h3>
+            <p class="text-gray-400">Connect with users and discuss terms and conditions through our secure chat system</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-xl">
+            3
+          </div>
+          <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700 h-full">
+            <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Agree & Share</h3>
+            <p class="text-gray-400">Accept terms and conditions to start sharing benefits or claim available coupons</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-xl">
+            4
+          </div>
+          <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700 h-full">
+            <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Save & Enjoy</h3>
+            <p class="text-gray-400">Use shared benefits and save money while helping others do the same</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <button class="px-8 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-colors animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+          Get Started Now
+        </button>
+      </div>
+    </div>
+  </section>
+</div></element><element id="b59c5ea4-a992-452e-9120-21ca25482bed" data-section-id="b59c5ea4-a992-452e-9120-21ca25482bed">
+
+<div id="root">
+  <section id="safety" class="py-20 bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Your Safety is Our Priority</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">We've implemented multiple layers of security to ensure safe transactions</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Safety Feature 1 -->
+        <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp">
+          <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-4">Secure Transactions</h3>
+          <ul class="text-gray-400 space-y-3">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Encrypted communication
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Verified users only
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Secure payment processing
+            </li>
+          </ul>
+        </div>
+
+        <!-- Safety Feature 2 -->
+        <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+          <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-4">Dispute Resolution</h3>
+          <ul class="text-gray-400 space-y-3">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              24/7 support team
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Quick complaint resolution
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Fair mediation process
+            </li>
+          </ul>
+        </div>
+
+        <!-- Safety Feature 3 -->
+        <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-700 hover:border-yellow-400 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+          <div class="w-16 h-16 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-4">User Protection</h3>
+          <ul class="text-gray-400 space-y-3">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Identity verification
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Fraud prevention
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Privacy protection
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 p-8 bg-neutral-900 rounded-xl border border-neutral-700 animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+        <h3 class="text-xl font-semibold text-white mb-4 text-center">Have a Safety Concern?</h3>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+          <button class="px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-colors">
+            Report an Issue
+          </button>
+          <button class="px-6 py-3 bg-neutral-800 text-yellow-400 rounded-lg hover:bg-neutral-700 transition-colors">
+            Contact Support
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></element><element id="a231c8b5-c8d6-4a97-a113-f8e28092785a" data-section-id="a231c8b5-c8d6-4a97-a113-f8e28092785a">
+
+<div id="root">
+  <section id="faq" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+        <p class="text-gray-400">Find answers to common questions about using Credex</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="bg-neutral-800 rounded-lg animate__animated animate__fadeInUp">
+          <button class="faq-toggle w-full px-6 py-4 flex justify-between items-center">
+            <span class="text-white font-medium">How does coupon sharing work?</span>
+            <svg class="w-6 h-6 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-400">Users can upload their unused coupons to the platform. Other users can browse and claim these coupons on a first-come, first-served basis. Once claimed, the coupon details will be shared with the claimer.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-neutral-800 rounded-lg animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+          <button class="faq-toggle w-full px-6 py-4 flex justify-between items-center">
+            <span class="text-white font-medium">How do I share my credit card benefits?</span>
+            <svg class="w-6 h-6 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-400">You can list your card benefits and terms & conditions. Interested users can contact you through our secure chat system to discuss sharing arrangements. All agreements must comply with card issuer policies.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-neutral-800 rounded-lg animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+          <button class="faq-toggle w-full px-6 py-4 flex justify-between items-center">
+            <span class="text-white font-medium">Is it safe to share card benefits?</span>
+            <svg class="w-6 h-6 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-400">We implement strict security measures and verify all users. However, always review terms carefully and use our secure chat system. Never share sensitive card information through the platform.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-neutral-800 rounded-lg animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+          <button class="faq-toggle w-full px-6 py-4 flex justify-between items-center">
+            <span class="text-white font-medium">What if something goes wrong?</span>
+            <svg class="w-6 h-6 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-400">You can file a complaint with our admin team immediately. We have a dedicated support team that handles disputes and ensures fair resolution for all parties involved.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="bg-neutral-800 rounded-lg animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+          <button class="faq-toggle w-full px-6 py-4 flex justify-between items-center">
+            <span class="text-white font-medium">How do I track my shared benefits?</span>
+            <svg class="w-6 h-6 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-400">Your dashboard shows all active shares, claims, and chat history. You can monitor usage, manage permissions, and track benefit sharing status in real-time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 animate__animated animate__fadeIn">
+        <p class="text-gray-400 mb-4">Still have questions?</p>
+        <button class="px-8 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-colors">
+          Contact Support
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.faq-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector('svg');
+          
+          // Toggle content
+          content.classList.toggle('hidden');
+          
+          // Rotate icon
+          if (content.classList.contains('hidden')) {
+            icon.style.transform = 'rotate(0deg)';
+          } else {
+            icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    </script>
+  </section>
+</div></element><element id="14c27ff6-6e8f-4fd1-aacb-31886f984849" data-section-id="14c27ff6-6e8f-4fd1-aacb-31886f984849">
+
+<div id="root">
+  <section id="contact" class="py-20 bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
+        <p class="text-gray-400">Get in touch with our support team for any questions or concerns</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-700 animate__animated animate__fadeInLeft">
+          <form id="contactForm" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+              <input type="text" id="name" name="name" required
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors">
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors">
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+              <select id="subject" name="subject" required
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors">
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="technical">Technical Support</option>
+                <option value="complaint">File a Complaint</option>
+                <option value="security">Security Concern</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" required
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full px-6 py-3 bg-yellow-400 text-black font-medium rounded-lg hover:bg-yellow-500 transition-colors">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-8 animate__animated animate__fadeInRight">
+          <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-700">
+            <h3 class="text-xl font-semibold text-white mb-6">Quick Support Channels</h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mr-4">
+                  <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium">Email Support</h4>
+                  <p class="text-gray-400">support@credex.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mr-4">
+                  <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium">Live Chat</h4>
+                  <p class="text-gray-400">Available 24/7</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mr-4">
+                  <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-medium">Support Center</h4>
+                  <p class="text-gray-400">Visit our help center</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-700">
+            <h3 class="text-xl font-semibold text-white mb-4">Emergency Support</h3>
+            <p class="text-gray-400 mb-4">For urgent security concerns or account issues, contact our emergency support line:</p>
+            <button class="w-full px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors">
+              Emergency Support Line
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></element><element id="065d4d69-f934-47c5-8fb5-1806f00d0e48" data-section-id="065d4d69-f934-47c5-8fb5-1806f00d0e48">
+
+<div id="root">
+  <footer id="footer" class="bg-neutral-900 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-neutral-700">
+        <!-- Company Info -->
+        <div class="animate__animated animate__fadeIn">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Credex</h3>
+          <p class="text-gray-400 mb-4">Share unused coupons and card benefits with our trusted community.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.016 18.6c-.461.383-1.072.641-1.84.766-.768.125-1.623.123-2.563-.006-.94-.128-1.92-.35-2.939-.67a17.94 17.94 0 01-2.939-1.197 11.84 11.84 0 01-2.563-1.726c-.768-.642-1.379-1.284-1.84-1.925-.461-.642-.691-1.325-.691-2.048 0-.724.23-1.407.691-2.048.461-.642 1.072-1.284 1.84-1.926.769-.641 1.623-1.198 2.563-1.726 1.019-.527 1.999-.854 2.939-1.033.94-.18 1.795-.269 2.563-.269.768 0 1.379.09 1.84.269.461.179.691.436.691.775 0 .232-.115.45-.346.654-.23.205-.576.307-1.037.307-.461 0-.922-.102-1.382-.307-.461-.204-.922-.307-1.383-.307-.461 0-.922.103-1.383.307-.46.205-.921.307-1.382.307-.461 0-.807-.102-1.037-.307-.231-.204-.346-.422-.346-.654 0-.34.23-.596.691-.775.461-.18 1.072-.269 1.84-.269.768 0 1.623.09 2.563.269.94.179 1.92.506 2.939 1.033.94.528 1.794 1.085 2.563 1.726.768.642 1.379 1.284 1.84 1.926.461.641.691 1.324.691 2.048 0 .723-.23 1.406-.691 2.048z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+              <li>
+                <a href="/about" class="text-gray-400 hover:text-yellow-400 transition-colors">About Us</a>
+              </li>
+              <li>
+                <a href="/terms" class="text-gray-400 hover:text-yellow-400 transition-colors">Terms &amp; Conditions</a>
+              </li>
+              <li>
+                <a href="/privacy" class="text-gray-400 hover:text-yellow-400 transition-colors">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="/contact" class="text-gray-400 hover:text-yellow-400 transition-colors">Contact</a>
+              </li>
+              <li>
+                <a href="/faq" class="text-gray-400 hover:text-yellow-400 transition-colors">FAQ</a>
+              </li>
+              <li>
+                <a href="/safety" class="text-gray-400 hover:text-yellow-400 transition-colors">Safety Guidelines</a>
+              </li>
+          </ul>
+        </div>
+
+        <!-- Features -->
+        <div class="animate__animated animate__fadeIn" style="animation-delay: 0.4s">
+          <h4 class="text-white font-semibold mb-4">Features</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Coupon Sharing</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Card Benefits</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Secure Chat</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Support System</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="animate__animated animate__fadeIn" style="animation-delay: 0.6s">
+          <h4 class="text-white font-semibold mb-4">Stay Updated</h4>
+          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+          <form class="space-y-2">
+            <input type="email" placeholder="Enter your email" 
+              class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-yellow-400">
+            <button type="submit" 
+              class="w-full px-4 py-2 bg-yellow-400 text-black font-medium rounded-lg hover:bg-yellow-500 transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="pt-8 text-center">
+        <p class="text-gray-400 text-sm">
+          © 2023 Credex. All rights reserved. |
+          <a href="#" class="hover:text-yellow-400 transition-colors">Privacy Policy</a> |
+          <a href="#" class="hover:text-yellow-400 transition-colors">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          

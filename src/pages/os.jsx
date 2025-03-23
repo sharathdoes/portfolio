@@ -1,19 +1,15 @@
 import React from 'react'
 import { Github } from 'lucide-react';
+import image from '../assets/image.png';
 
 function Os() {
   return (
-    <div >
-      <h2 className="mb-4">Operating System Chatbot</h2>
-      <p className="mb-4" >This project leverages the capabilities of LLaMA 3.2 and RAG to create a comprehensive chatbot that can assist users with various operating system-related queries. The integration with the FAISS database ensures efficient and accurate information retrieval.</p>
-      <p>
-        Check out the project on my <a href="https://github.com/sharathdoes/PDF-to-chatbot-using-RAG-Langchain" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-          <Github className="w-4 h-4 mr-1" />
-          GitHub
-        </a>.
-      </p>
+    <div>
+      <h2 className="mb-4 font-bold">Text-to-SQL using RAG (live <a href="https://huggingface.co/spaces/Sharath7693/text2sql_rag" target="_blank" rel="noopener noreferrer">here</a>)</h2>
+      <img src={image} alt="Project Image" className="w-full h-auto rounded-lg object-cover" />
+      <p className="mb-4">This project utilizes Retrieval-Augmented Generation (RAG) with NeonDB and a vector store to efficiently store schemas and retrieve relevant information for generating SQL queries from natural language inputs.</p>
     </div>
   )
 }
 
-export default Os
+export default Os;
