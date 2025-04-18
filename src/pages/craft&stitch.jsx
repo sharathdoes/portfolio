@@ -10,7 +10,7 @@ function cands() {
         <img className="rounded-lg mb-2" src={image} alt="Designathon Project Image" />
       </a> {/* Display the image with a link to open it */}
       <p className='mb-2 mt-4'>
-      The Designathon Hackathon, hosted at VNR VJIET, was a thrilling event with a prize pool of 1 lakh.  </p>    <p>
+      The Designathon Hackathon, hosted at VNR VJIET, was a thrilling event, a 24 hour National level Hackathon with 600+ participants and with a prize pool of 1 lakh.  </p>    <p>
         <a href="https://github.com/sharathdoes/Designathon-2k25" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
           <Github className="w-4 h-4 mr-1" />
           GitHub

@@ -13,7 +13,8 @@ import Notes from "./notes";
 import { ScrollArea } from "../components/ui/scroll-area";
 import Os from "./os";
 import TypingAnimation from "../components/ui/typing-animation";
-
+import Gigsy from "./Gigsy";
+import Xtension from "./Xtension"
 const fileStructure = [
   {
     name: "portfolio",
@@ -34,13 +35,14 @@ const fileStructure = [
           {
             name: "Generative ai",
             type: "folder",
-            children: [{ name: "luma.jsx", type: "file", component: langchain }, { name: "text2sql.jsx", type: "file", component: Os }],
+            children: [{ name: "luma.jsx", type: "file", component: langchain }, { name: "text2sql.jsx", type: "file", component: Os },{ name: "Xtension.jsx", type: "file", component: Xtension },],
           },
           {
             name: "Fullstack Dev",
             type: "folder",
             children: [
               { name: "amplify.jsx", type: "file", component: Amplify },
+              { name: "gigsy.jsx", type: "file", component: Gigsy },
               { name: "design.jsx", type: "file", component: cands },
             ],
           },
