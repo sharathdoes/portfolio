@@ -12,6 +12,7 @@ import movies from "./movies";
 import Notes from "./notes";
 import { ScrollArea } from "../components/ui/scroll-area";
 import Os from "./os";
+import Scholar from "./scholar";
 import TypingAnimation from "../components/ui/typing-animation";
 import Gigsy from "./Gigsy";
 import Xtension from "./Xtension"
@@ -35,7 +36,7 @@ const fileStructure = [
           {
             name: "Generative ai",
             type: "folder",
-            children: [{ name: "luma.jsx", type: "file", component: langchain }, { name: "SqlSage.jsx", type: "file", component: Os },{ name: "Xtension.jsx", type: "file", component: Xtension },],
+            children: [{ name: "scholar.jsx", type: "file", component: Scholar },{ name: "luma.jsx", type: "file", component: langchain }, { name: "SqlSage.jsx", type: "file", component: Os },{ name: "Xtension.jsx", type: "file", component: Xtension },],
           },
           {
             name: "Fullstack Dev",
