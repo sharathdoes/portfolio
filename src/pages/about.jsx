@@ -36,7 +36,7 @@ const fileStructure = [
           {
             name: "Generative ai",
             type: "folder",
-            children: [{ name: "scholar.jsx", type: "file", component: Scholar },{ name: "luma.jsx", type: "file", component: langchain }, { name: "SqlSage.jsx", type: "file", component: Os },{ name: "Xtension.jsx", type: "file", component: Xtension },],
+            children: [{ name: "vertex.jsx", type: "file", component: langchain },{ name: "scholar.jsx", type: "file", component: Scholar }, { name: "SqlSage.jsx", type: "file", component: Os },{ name: "Xtension.jsx", type: "file", component: Xtension },],
           },
           {
             name: "Fullstack Dev",
