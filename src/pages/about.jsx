@@ -16,6 +16,7 @@ import Scholar from "./scholar";
 import TypingAnimation from "../components/ui/typing-animation";
 import Gigsy from "./Gigsy";
 import Xtension from "./Xtension"
+import NandC from "./nandc";
 const fileStructure = [
   {
     name: "portfolio",
@@ -36,7 +37,7 @@ const fileStructure = [
           {
             name: "Generative ai",
             type: "folder",
-            children: [{ name: "vertex.jsx", type: "file", component: langchain },{ name: "scholar.jsx", type: "file", component: Scholar }, { name: "SqlSage.jsx", type: "file", component: Os },{ name: "Xtension.jsx", type: "file", component: Xtension },],
+            children: [{ name: "vertex.jsx", type: "file", component: langchain },{ name: "scholar.jsx", type: "file", component: Scholar },{ name: "Xtension.jsx", type: "file", component: Xtension }, { name: "SqlSage.jsx", type: "file", component: Os },],
           },
           {
             name: "Fullstack Dev",
@@ -44,6 +45,7 @@ const fileStructure = [
             children: [
               { name: "amplify.jsx", type: "file", component: Amplify },
               { name: "gigsy.jsx", type: "file", component: Gigsy },
+              { name: "nat_care.jsx", type: "file", component: NandC },
               { name: "design.jsx", type: "file", component: cands },
             ],
           },
