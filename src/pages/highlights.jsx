@@ -15,7 +15,7 @@ function Highlights() {
         <hr className="mb-2" />
         <li className="highlights-item mb-2">Recognized as the winner of the Skykhar Webathon for creating a web application that supports farmers.</li>
         <hr className="mb-2" />
-        <li className="highlights-item mb-2">Experienced in coding languages such as C++ and Java, with a LeetCode rating of 1682 username: sharath_7693.</li>
+        <li className="highlights-item mb-2">Experienced in coding languages such as C++ and Java, with a LeetCode rating of 1700+ username: sharath_7693.</li>
       </ul>
     </div>
   );
