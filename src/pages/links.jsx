@@ -13,7 +13,7 @@ function Links() {
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/sharath-chandra-gaddam-851a45263/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/sharathdoes/" target="_blank" rel="noopener noreferrer">
             <SocialIcon fgColor="#fff" bgColor="#0077B5" className="mr-3 mb-2" />
             LinkedIn
           </a>
@@ -25,7 +25,7 @@ function Links() {
           </a>
         </li>
         <li>
-          <a href="https://leetcode.com/sharath7693" target="_blank" rel="noopener noreferrer">
+          <a href="https://leetcode.com/sharathdoes" target="_blank" rel="noopener noreferrer">
             <SocialIcon fgColor="#fff" bgColor="#FFA116" className="mr-3 mb-2" />
             LeetCode
           </a>
